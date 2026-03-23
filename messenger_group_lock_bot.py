@@ -19,10 +19,10 @@ from fbchat.models import *
 import time
 
 # ==== CONFIG ====
-EMAIL = "your_facebook_email"
-PASSWORD = "your_facebook_password"
-THREAD_ID = "GROUP_THREAD_ID"
-LOCKED_NAME = "My Locked Group Name"
+EMAIL = "aluarjun12+2300@zohomail.in"
+PASSWORD = "akash@55"
+THREAD_ID = "1729820384667780"
+LOCKED_NAME = "शिवराज मौलवी की अप्पी का आशिक ध्रुव X धीरज"
 
 CHECK_INTERVAL = 10  # seconds
 
