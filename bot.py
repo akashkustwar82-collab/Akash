@@ -101,7 +101,7 @@ class MyBot(Client):
 with open("appstate.json") as f:
     appstate = json.load(f)
 
-bot = MyBot(email=None, password=None, session_cookies=appstate)
+bot = MyBot("", "")
 bot.setSession(appstate)
 
 print("🚀 ULTIMATE BOT RUNNING...")
