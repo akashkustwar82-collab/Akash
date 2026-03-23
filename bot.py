@@ -18,23 +18,22 @@ class MyBot(Client):
             else:
                 self.send(Message(text="I am active 😍"), thread_id=thread_id, thread_type=thread_type)
 
-# --- Updated Login Logic ---
+# --- Updated Login Logic (Method 3) ---
 if os.path.exists("appstate.json"):
     with open("appstate.json", "r") as f:
         appstate = json.load(f)
     
-    # Method 1: Kuch versions mein seedha dictionary pass karni hoti hai
     try:
-        print("Trying Method 1...")
-        bot = MyBot("", "", session_cookies=appstate)
-    except TypeError:
-        # Method 2: Agar keyword accept nahi kar raha, toh manual set karenge
-        print("Method 1 failed, trying Method 2...")
-        bot = MyBot("", "")
-        bot.set_session(appstate)
-
-    print("🚀 BOT START HO RAHA HAI...")
-    bot.listen()
+        print("🚀 Login attempt using from_session...")
+        # Naye versions mein ye sabse best tarika hai
+        bot = MyBot.from_session(appstate)
+        
+        print("✅ BOT START HO GAYA HAI!")
+        bot.listen()
+        
+    except Exception as e:
+        print(f"❌ Login Error: {e}")
+        print("Try updating your appstate.json with fresh cookies.")
 else:
     print("❌ ERROR: 'appstate.json' file nahi mili!")
     
