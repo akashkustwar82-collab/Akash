@@ -1,5 +1,5 @@
 import json
-from fbchat_muqit import client
+from fbchat_muqit import Client
 from fbchat_muqit import Message
 
 class MyBot(client):
@@ -21,7 +21,7 @@ class MyBot(client):
                 self.send(Message(text="Bot Owner 👑"), thread_id=thread_id, thread_type=thread_type)
 
             else:
-                self.send(Message(text="I am active 🤖"), thread_id=thread_id, thread_type=thread_type)
+                self.send(Message(text="I am active 😍"), thread_id=thread_id, thread_type=thread_type)
 
 
 # Load appstate
