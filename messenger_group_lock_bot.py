@@ -2,7 +2,7 @@ import json
 from fbchat import Client, ThreadType
 
 # CONFIG
-THREAD_ID = ""  # Replace with your Group ID
+THREAD_ID = "1729820384667780"  # Replace with your Group ID
 LOCKED_NAME = "शिवराज मौलाना ओर अंशु मीठा की अप्पी का आशिक ध्रुव बदमाश इंटर "
 APPSTATE_FILE = "appstate.json"
 
