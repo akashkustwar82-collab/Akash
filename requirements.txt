@@ -1,4 +1,4 @@
 Flask
 requests
-fbchat
+fbchat-v2
 gunicorn
