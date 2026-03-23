@@ -18,22 +18,30 @@ class MyBot(Client):
             else:
                 self.send(Message(text="I am active 😍"), thread_id=thread_id, thread_type=thread_type)
 
-# --- Standard Login Logic ---
+# --- Sabse Simple Login Logic ---
 if os.path.exists("appstate.json"):
     with open("appstate.json", "r") as f:
         appstate = json.load(f)
     
     try:
-        print("🔄 Logging in with from_session...")
-        # fbchat-muqit mein cookies se login karne ka sahi tareeka:
-        bot = MyBot.from_session(appstate)
+        print("🔄 Logging in with Session Cookies...")
+        
+        # Method: Khali email/pass ke saath appstate pass karna
+        bot = MyBot("", "", session_cookies=appstate)
         
         print("🚀 BOT RUNNING SUCCESSFULLY...")
         bot.listen()
         
     except Exception as e:
-        print(f"❌ Login Error: {e}")
-        print("Aapki appstate.json file check karein ya nayi cookies generate karein.")
+        print(f"❌ Login Failed: {e}")
+        print("💡 Tip: Agar ye error keyword 'session_cookies' ki hai, toh niche wala try karein.")
+        
+        # Agar upar wala fail ho (keyword error), toh bina keyword ke pass karein:
+        try:
+            bot = MyBot("", "", appstate)
+            bot.listen()
+        except:
+            print("Fatal Error: Please check library version or appstate format.")
 else:
-    print("❌ ERROR: 'appstate.json' file missing!")
+    print("❌ ERROR: 'appstate.json' nahi mili!")
     
