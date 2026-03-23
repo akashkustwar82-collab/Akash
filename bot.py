@@ -2,7 +2,7 @@ import json
 from fbchat_muqit import client
 from fbchat_muqit import Message
 
-class MyBot(Client):
+class MyBot(client):
 
     def onMessage(self, mid=None, author_id=None, message_object=None,
                   thread_id=None, thread_type=None, **kwargs):
