@@ -1,6 +1,6 @@
 import json
 from fbchat_muqit import client
-from fbchat.models import Message
+from fbchat_muqit import Message
 
 class MyBot(Client):
 
