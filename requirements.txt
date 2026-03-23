@@ -1,4 +1,1 @@
-Flask
-requests
-fbchat
-gunicorn
+git+https://github.com/fbchat-dev/fbchat.git
